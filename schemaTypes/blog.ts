@@ -6,12 +6,7 @@ export const blog = defineType({
     title: 'Blog',
     type: 'document',
     fields: [
-        defineField({
-            name: 'thumbnailImage',
-            title: 'Thumbnail Image',
-            type: 'image',
-            options: { hotspot: true },
-        }),
+        defineField({ name: 'thumbnailImage', title: 'Thumbnail Image', type: 'image', options: { hotspot: true } }),
         defineField({
             name: 'author',
             title: 'Author',
@@ -50,44 +45,20 @@ export const blog = defineType({
             type: 'image',
             options: { hotspot: true },
         }),
+
         defineField({
-            name: 'inlineBodyParagraph',
-            title: 'Intro Paragraph',
-            type: 'text',
-            validation: (Rule: Rule) => Rule.required(),
+            name: 'body',
+            title: 'Body',
+            type: 'bodyPortableText',
         }),
-        defineField({
-            name: 'inlineImage',
-            title: 'Inline Image',
-            type: 'image',
-            options: { hotspot: true },
-        }),
-        defineField({
-            name: 'faqSection',
-            title: 'FAQ Section',
-            type: 'array',
-            of: [{ type: 'faqItem' }],
-        }),
-        defineField({
-            name: 'inlineBodyParagraph2',
-            title: 'Second Paragraph',
-            type: 'text',
-        }),
+
         defineField({
             name: 'callToAction',
             title: 'Call to Action',
             type: 'object',
             fields: [
-                defineField({
-                    name: 'text',
-                    title: 'Button Text',
-                    type: 'string',
-                }),
-                defineField({
-                    name: 'url',
-                    title: 'URL',
-                    type: 'url',
-                }),
+                defineField({ name: 'text', title: 'Button Text', type: 'string' }),
+                defineField({ name: 'url', title: 'URL', type: 'url' }),
             ],
         }),
     ],
